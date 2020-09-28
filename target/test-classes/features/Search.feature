@@ -1,25 +1,16 @@
 
 @search
 Feature: Search fuctionality
-  I want to use this template for my feature file
+ 
 
-  @tag1
-  Scenario: Title of your scenario
-    Given I want to write a step with precondition
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
+  @TC001
+  Scenario: Search a Product
+    Given I have browser opened and url navigated
+    When I search for product as "Dell"
+    Then product list should apper pertaining to the product search as "Dell"
+    
+  @TC004
+  Scenario: User want to search product by using hamberger menu
     Given I want to write a step with <name>
     When I check for the <value> in step
     Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
