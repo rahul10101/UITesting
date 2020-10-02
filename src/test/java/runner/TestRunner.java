@@ -8,9 +8,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-		features="classpath:features/",
+		features="classpath:features",
 		glue="stepdefs",
-		tags="@TC001",
+		tags="@TC002",
 		plugin = {"pretty",
 				"html:target/html/",
 				"json:target/json/file.json",

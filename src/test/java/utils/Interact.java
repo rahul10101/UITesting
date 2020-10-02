@@ -15,8 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.Scenario;
 
-public class Interact {
-	
+public abstract class Interact {
+
 	private static final Logger logger = LogManager.getLogger(Interact.class);
 	private WebDriver driver;
 	
@@ -119,5 +119,4 @@ public class Interact {
 	public void takeScreenShotAndAttachInReport(Scenario s) {
 		s.embed(takeScreenShot(), "image/png");
 	}
-
 }

@@ -7,5 +7,4 @@ public class ChromeManager extends DriverManager{
 	protected void initDriver() {
 		driver = new ChromeDriver();
 	}
-
 }
