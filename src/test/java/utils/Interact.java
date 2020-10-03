@@ -1,7 +1,11 @@
 package utils;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
+import javax.xml.bind.ParseConversionEvent;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,7 +41,7 @@ public abstract class Interact {
 	}
 	
 	public void clickElement(WebElement webElement) {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webElement));
 		webElement.click();
 		logger.info("Element is clicked. Element Description: " + webElement.toString());
@@ -81,14 +85,34 @@ public abstract class Interact {
 	}
 	
 	public void switchToSecondWindowTab() {
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> itr= handles.iterator();
+		while(itr.hasNext()){
+			String childWindow=itr.next();
+		driver.switchTo().window(childWindow);
+		}
+		logger.info("Browser Switched to second window tab.");
+	}
+	
+	public void switchToSecondWindowTabByArray() {
 		String [] handles = (String[]) driver.getWindowHandles().toArray();
 		driver.switchTo().window(handles[1]);
 		logger.info("Browser Switched to second window tab.");
 	}
 	
-	public void switchToDefaultWindowTab() {
+	public void switchToDefaultWindowTabByArray() {
 		String [] handles = (String[]) driver.getWindowHandles().toArray();
 		driver.switchTo().window(handles[0]);
+		logger.info("Browser Switched to parent window tab.");
+	}
+	
+	public void switchToDefaultWindowTab() {
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> itr= handles.iterator();
+		while(itr.hasNext()){
+			String parentWindow=itr.next();
+		driver.switchTo().window(parentWindow);
+		}
 		logger.info("Browser Switched to parent window tab.");
 	}
 	
