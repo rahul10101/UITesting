@@ -3,11 +3,13 @@
 Feature: Home Page Validation
   
 
-  @tag1
-  Scenario: Validate Header links
-    Given I havebrowser opened and url navigated
-    Then Below header links are displayed
-    
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  @TC004
+  Scenario: Validate Header Links
+    Given I have browser opened and url navigated
+    Then Below Headers are Displayed
+    	|hamburger menu   |
+			|amazon prime logo|
+			|accounts and list link|
+			|return and orders|
+			|your prime link|
+			|cart link|

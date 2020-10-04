@@ -10,14 +10,16 @@ import cucumber.api.junit.Cucumber;
 
 		features="classpath:features",
 		glue="stepdefs",
-		tags="@TC003",
+		tags="@TC004",
 		plugin = {"pretty",
 				"html:target/html/",
 				"json:target/json/file.json",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		},
-		strict=false,
-		dryRun=false
+		
+		monochrome = true, // display the console output in much readable way 
+		strict=false, // will fail execution if there are undefined or pending steps 
+		dryRun=false 
 		
 
 		)
