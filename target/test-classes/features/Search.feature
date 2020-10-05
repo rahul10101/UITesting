@@ -3,7 +3,7 @@
 Feature: Search fuctionality
  
 
-  @TC001
+@TC001
   Scenario: Search a Product
     Given I have browser opened and url navigated
     When I search for product as "Dell"
@@ -23,3 +23,20 @@ Feature: Search fuctionality
 				When I search for product as "Dell"
 				And I click on any product in the Search Result 
 				Then I am able to see product description and details in new tab
+				
+	@TC005
+	Scenario: Validate Search product Refinements for Product Type "Refrigerator"
+	Given I have browser opened and url navigated
+	When I search for product as "Refrigerator"
+	Then Below Search product refinement should displayed
+	|Amazon Prime|
+	|Department|
+	|Avg. Customer Review| 
+	|Brand|
+	|Filters|
+	
+	@TC006
+	Scenario: A user want to serach a product under price range
+		Given I have browser opened and url navigated
+    When I search for product as "Dell"
+    Then product should be displayed sorted by price range
