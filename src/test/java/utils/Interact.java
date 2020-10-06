@@ -84,6 +84,17 @@ public abstract class Interact {
 		return b;
 	}
 	
+	public boolean validateElementIsEnabled(By by) {
+		boolean b = driver.findElement(by).isEnabled();
+		logger.info("Element is Enabled status: " + by.toString());
+		return b;
+	}
+	
+	public boolean validateElementIsSelected(By by) {
+		boolean b = driver.findElement(by).isSelected();
+		logger.info("Element is Selected status: " + by.toString());
+		return b;
+	}
 	public void switchToSecondWindowTab() {
 		Set<String> handles = driver.getWindowHandles();
 		Iterator<String> itr= handles.iterator();
