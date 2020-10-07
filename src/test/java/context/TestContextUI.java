@@ -3,6 +3,7 @@ package context;
 import org.openqa.selenium.WebDriver;
 
 import cucumber.api.Scenario;
+import pageObjects.AddtoCartPageObjects;
 import pageObjects.CmnPageObjects;
 import pageObjects.ProductDescriptionObjects;
 import pageObjects.SearchPageObject;
@@ -13,7 +14,7 @@ public class TestContextUI {
 	private SearchPageObject searchPageObject;
 	private CmnPageObjects cmnPageObjects;
 	private ProductDescriptionObjects productDescriptionObjects;
-	
+	private AddtoCartPageObjects addToCartPageObjects;
 	
 	public WebDriver getDriver() {
 		return driver;
@@ -32,10 +33,16 @@ public class TestContextUI {
 	public ProductDescriptionObjects getproductDescriptionObjects() {
 		return productDescriptionObjects;
 	}
+	
+	public AddtoCartPageObjects getaddToCartPageObjects() {
+		return addToCartPageObjects;
+	}
 
 	public void initializePageObjectClasses(WebDriver driver, Scenario scn) {
 		searchPageObject = new SearchPageObject(driver, scn);
 		cmnPageObjects = new CmnPageObjects(driver,scn);
 		productDescriptionObjects = new ProductDescriptionObjects(driver, scn);
+		addToCartPageObjects = new AddtoCartPageObjects(driver, scn);
+		
 	}
 }

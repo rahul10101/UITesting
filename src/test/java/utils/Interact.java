@@ -33,7 +33,7 @@ public abstract class Interact {
 	}
 		
 	public WebElement clickElement(By by) {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 		element.click();
 		logger.info("Element is clicked. Element Description: " + by.toString());
