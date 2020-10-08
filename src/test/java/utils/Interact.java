@@ -72,7 +72,7 @@ public abstract class Interact {
 	}
 	
 	public List<WebElement> getListOfWebElements(By by){
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		logger.info("List of Elements returned for description: " + by.toString());
 		return element.findElements(by);

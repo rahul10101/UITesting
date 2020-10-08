@@ -48,6 +48,20 @@ Feature: Search fuctionality
     			Then Pegination panel with products of first page are displayed by default
     			And page links of previous page and next page workign as per expectation 
 
-    
-    
-    
+   @TC009
+   Scenario: A user Entered any Keyword in Search then in Search dropdown it should display appropriate option which is entered in the Search.
+   Given I have browser opened and url navigated
+   When I search for product as "Samsung" in search box
+   Then I am able to see autosuggetion option having keyword "Samsung" .
+   
+   @TC0010
+   Scenario Outline: Add products and Check SubTotal of Cart is Correct
+   Given I have browser opened and url navigated
+   When I Search <Products> and Added Into Cart 
+   Then The Subtotal Is Total Of All Products In Cart
+   
+   Examples:
+   |products|
+   |Dell|
+   |Samsung|
+   |Computer|
