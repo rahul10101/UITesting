@@ -55,13 +55,11 @@ Feature: Search fuctionality
    Then I am able to see autosuggetion option having keyword "Samsung" .
    
    @TC0010
-   Scenario Outline: Add products and Check SubTotal of Cart is Correct
+   Scenario: Add products and Check SubTotal of Cart is Correct
    Given I have browser opened and url navigated
-   When I Search <Products> and Added Into Cart 
-   Then The Subtotal Is Total Of All Products In Cart
-   
-   Examples:
-   |products|
+   When I Search products and Added Into Cart
    |Dell|
    |Samsung|
    |Computer|
+   Then The Subtotal Is Total Of All Products In Cart  
+ 
