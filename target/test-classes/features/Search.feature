@@ -61,5 +61,8 @@ Feature: Search fuctionality
    |Dell|
    |Samsung|
    |Computer|
-   Then The Subtotal Is Total Of All Products In Cart  
+   Then The Subtotal Is Total Of All Products In Cart
+   
+   
+ 
  

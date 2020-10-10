@@ -14,6 +14,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -46,6 +47,23 @@ public abstract class Interact {
 		webElement.click();
 		logger.info("Element is clicked. Element Description: " + webElement.toString());
 	}
+	
+	public void DisplayedorNot(By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+		element.getText();
+		logger.info("Element is clicked. Element Description: " + element.toString());
+		
+	}
+	
+	public void moveToCursorOnElement(By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
+		Actions action = new Actions(driver);
+		action.moveToElement((WebElement) element).build().perform();
+		
+	}
+	
 	
 	public WebElement setElement(By by, String text) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
