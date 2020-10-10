@@ -31,7 +31,7 @@ public class HomePageStepdefs {
 	@When("I click on Login And Enter Valid Creadentials")
 	public void i_click_on_Login_And_Enter_Valid_Creadentials() {
 	   testContextUI.getCmnPageObjects().click_Sign_In();
-	   testContextUI.getCmnPageObjects().email_or_phone("9273430608");
+	   testContextUI.getCmnPageObjects().email_or_phone("6634654");
 	   testContextUI.getCmnPageObjects().click_ContinueButton();
 	   testContextUI.getCmnPageObjects().enterPassword("54@9$%#");
 	   testContextUI.getCmnPageObjects().click_Login_Button();
