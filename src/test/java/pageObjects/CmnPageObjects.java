@@ -35,6 +35,8 @@ public class CmnPageObjects extends Interact {
 	private By login_button = By.xpath("//input[@id='signInSubmit']");
 	private By sign_Out = By.xpath("//*[@id='nav-item-signout']/span");
 	
+	
+	
 	private String hamburger_menu_category_link_xpath = "//div[@id='hmenu-content']/ul[8]/li['%s']";
 	private String hamburger_menu_sub_category_link_xpath = "//div[@id='hmenu-content']/ul[8]/li['%s']";
 	
@@ -42,6 +44,7 @@ public class CmnPageObjects extends Interact {
 		setDriver(driver);
 		this.scn = s;
 	}
+	
 	
 	public void click_Sign_In() {
 		clickElement(sign_In_Button);

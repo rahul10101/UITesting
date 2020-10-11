@@ -66,7 +66,7 @@ public abstract class Interact {
 	
 	
 	public WebElement setElement(By by, String text) {
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebDriverWait wait = new WebDriverWait(driver, 90);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 		element.sendKeys(text);
 		logger.info("Element is Set with text as: " + text + ". Element Description: " + by.toString());

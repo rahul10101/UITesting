@@ -17,6 +17,7 @@ public abstract class DriverManager {
 		driver.quit();
 	}
 	
+	
 	public void closeDriver() {
 		driver.close();
 	}
