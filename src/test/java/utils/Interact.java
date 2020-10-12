@@ -126,6 +126,7 @@ public abstract class Interact {
 		while(itr.hasNext()){
 			String childWindow=itr.next();
 		driver.switchTo().window(childWindow);
+	
 		}
 		logger.info("Browser Switched to second window tab.");
 	}

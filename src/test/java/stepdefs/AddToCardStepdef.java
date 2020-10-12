@@ -36,7 +36,7 @@ public void i_added_products_in_the_cart(Integer proCount) throws Exception {
     	testContextUI.getSearchPageObject().ClickOnProductLink();
     	testContextUI.getSearchPageObject().switchToSecondWindowTab();
     	testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
-    	testContextUI.getDriver().close();
+    	//testContextUI.getDriver().close();
     	testContextUI.getaddToCartPageObjects().switchToDefaultWindowTab();
     	testContextUI.getSearchPageObject().CleartextBox();
     	testContextUI.getDriver().navigate().refresh();
@@ -60,4 +60,7 @@ public static ArrayList<String> productList(){
 	productList.add("Samsung TV");
 	return productList();
 }
+
+
+
 }

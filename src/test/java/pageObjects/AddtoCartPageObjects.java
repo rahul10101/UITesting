@@ -18,9 +18,9 @@ public class AddtoCartPageObjects extends Interact {
 	Scenario scn;
 	
 	private By product_List = By.xpath("//span[@class='a-size-base-plus a-color-base a-text-normal']");
-	private By addToCart_Button = By.xpath("//input[@id='add-to-cart-button']");
+	private By addToCart_Button = By.xpath("//input[@title='Add to Shopping Cart']");
 	private By Cart_products_Added = By.xpath("//div[@id='nav-cart-count-container']/span[1]");
-	private By delete_1st_Product = By.xpath("//*[@id=\"sc-item-C6c21f5e2-4a7d-45d6-9826-a9e185ca4999\"]/div[4]/div/div[1]/div/div/div[2]/div[1]/span[2]/span/input");
+	private By delete_1st_Product = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold']");
 	//private By added_Product_Name = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold']");
 	public AddtoCartPageObjects(WebDriver driver, Scenario s) {
 		setDriver(driver);

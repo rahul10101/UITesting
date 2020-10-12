@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 
 		features="classpath:features",
 		glue="stepdefs",
-		tags="@TC0011",
+		tags="@TC0013",
 		plugin = {"pretty",
 				"html:target/html/",
 				"json:target/json/file.json",

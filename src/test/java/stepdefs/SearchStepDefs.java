@@ -149,6 +149,7 @@ public class SearchStepDefs extends TestBase{
 			testContextUI.getSearchPageObject().click_on_Search_Button();
 			testContextUI.getSearchPageObject().ClickOnProductLink();
 			testContextUI.getaddToCartPageObjects().switchToSecondWindowTab();
+			Thread.sleep(5000);
 			testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
 			testContextUI.getDriver().close();
 			testContextUI.getaddToCartPageObjects().switchToDefaultWindowTab();
