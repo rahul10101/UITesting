@@ -43,8 +43,8 @@ public void i_added_products_in_the_cart(Integer proCount) throws Exception {
     }
 }
 
-@When("Deleted one product from it.")
-public void deleted_one_product_from_it() {
+@When("Delete one product from it.")
+public void delete_one_product_from_it() {
   testContextUI.getaddToCartPageObjects().ClickOnCart();
   testContextUI.getaddToCartPageObjects().ClickOnDelete();
 }
@@ -61,6 +61,36 @@ public static ArrayList<String> productList(){
 	return productList();
 }
 
+@When("I Search products as Laptop and Added Into Cart")
+public void i_Search_products_as_Laptop_and_Added_Into_Cart() {
+   testContextUI.getSearchPageObject().search_TextBox("Laptop");
+   testContextUI.getSearchPageObject().click_on_Search_Button();
+   testContextUI.getSearchPageObject().ClickOnProductLink();
+   testContextUI.getSearchPageObject().switchToSecondWindowTab();
+   testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
+   testContextUI.getDriver().close();
+   testContextUI.getaddToCartPageObjects().switchToDefaultWindowTab();
+   testContextUI.getSearchPageObject().CleartextBox();
+   testContextUI.getDriver().navigate().refresh();
+}
+
+@Then("I get message as {string}")
+public void i_get_message_as(String msg) {
+	testContextUI.getaddToCartPageObjects().ValidateCartIsEmpty(msg);
+}
+
+@When("I Search products as Earphones and Added Into Cart")
+public void i_Search_products_as_Earphones_and_Added_Into_Cart() {
+	testContextUI.getSearchPageObject().search_TextBox("Earphones");
+	   testContextUI.getSearchPageObject().click_on_Search_Button();
+	   testContextUI.getSearchPageObject().ClickOnProductLink();
+	   testContextUI.getSearchPageObject().switchToSecondWindowTab();
+	   testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
+	   testContextUI.getDriver().close();
+	   testContextUI.getaddToCartPageObjects().switchToDefaultWindowTab();
+	   testContextUI.getSearchPageObject().CleartextBox();
+	   testContextUI.getDriver().navigate().refresh();
+}
 
 
 }

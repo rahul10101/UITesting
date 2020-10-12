@@ -21,5 +21,19 @@ Feature: Add to Cart Functionality
    When I Search products and Added Into Cart
    |Dell|
    |Samsung|
-  And Deleted one product from it.
+  And Delete product from it.
   Then validate cart should update accordigly or not
+  
+  @TC0014
+  Scenario Outline: User should be able to Remove the items from Add To Cart list
+  
+  Given I have browser opened and url navigated
+  When I Search products as <name> and Added Into Cart
+  And Delete one product from it.
+  Then I get message as "Your Amazon Basket is empty" 
+  
+  Examples:
+  |name|
+  |Laptop|
+  |Earphones|
+  

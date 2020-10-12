@@ -22,6 +22,8 @@ public class AddtoCartPageObjects extends Interact {
 	private By Cart_products_Added = By.xpath("//div[@id='nav-cart-count-container']/span[1]");
 	private By delete_1st_Product = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold']");
 	//private By added_Product_Name = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold']");
+	private By cart_empty_msg =By.xpath("//div[@class='a-row sc-your-amazon-cart-is-empty']");
+	
 	public AddtoCartPageObjects(WebDriver driver, Scenario s) {
 		setDriver(driver);
 		this.scn = s; 
@@ -33,7 +35,12 @@ public class AddtoCartPageObjects extends Interact {
 		
 		return list.get(0).getText();
 		}
-	
+	public void ValidateCartIsEmpty(String msg){
+		String actual=getText(cart_empty_msg);
+		Assert.assertEquals(msg, actual);
+		scn.write("After the product is deleted message displayed as: "+"Your Amazon Basket is empty");
+		
+	}
 	public void ClickOnAddtoCartButton() {
 		clickElement(addToCart_Button);
 		scn.write("Clicked on Add to Cart Product Button");
