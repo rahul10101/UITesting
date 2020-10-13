@@ -42,4 +42,21 @@ public class HomePageStepdefs {
 	  testContextUI.getCmnPageObjects().moveCursorOnSignIn();
 	  testContextUI.getCmnPageObjects().Sign_Out();
 	}
+	
+	@When("I move mouse on the {string}")
+	public void i_move_mouse_on_the(String string) {
+		testContextUI.getCmnPageObjects().moveCursorOnSignIn();
+		
+	}
+
+	@When("I Click on {string} Link in the Acocunt and Links Fly Out Pop up")
+	public void i_Click_on_Link_in_the_Acocunt_and_Links_Fly_Out_Pop_up(String string) {
+	    testContextUI.getCmnPageObjects().your_account_In_dropdown_Click();
+	}
+
+	@Then("I navigate to {string} Page")
+	public void i_navigate_to_Page(String string) {
+	  testContextUI.getCmnPageObjects().validate_Your_Account_Text(string);
+	}
+
 }

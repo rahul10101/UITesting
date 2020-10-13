@@ -20,3 +20,11 @@ Feature: Home Page Validation
 	Given I have browser opened and url navigated
 	When I click on Login And Enter Valid Creadentials
 	Then I login Successfully
+	
+	@TC0015
+	Scenario: Validate Accounts and Links Fly Out Pop up
+	
+	Given I have browser opened and url navigated
+	When I move mouse on the "Account and Links" 
+	And I Click on "Your Account" Link in the Acocunt and Links Fly Out Pop up
+	Then I navigate to "Your Account" Page  

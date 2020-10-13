@@ -34,8 +34,8 @@ public class CmnPageObjects extends Interact {
 	private By password = By.xpath("//input[@id='ap_password']");
 	private By login_button = By.xpath("//input[@id='signInSubmit']");
 	private By sign_Out = By.xpath("//*[@id='nav-item-signout']/span");
-	
-	
+	private By your_account = By.xpath("//*[@id='nav-al-your-account']/a[1]/span");
+	private By your_acocunt_text = By.xpath("//*[@id='a-page']/div[2]/div/div[1]/h1");
 	
 	private String hamburger_menu_category_link_xpath = "//div[@id='hmenu-content']/ul[8]/li['%s']";
 	private String hamburger_menu_sub_category_link_xpath = "//div[@id='hmenu-content']/ul[8]/li['%s']";
@@ -55,6 +55,13 @@ public class CmnPageObjects extends Interact {
 		scn.write("Login Successfully and verified");
 		takeScreenShotAndAttachInReport(scn);
 	}
+	
+	public void your_account_In_dropdown_Click() {
+		clickElement(your_account);
+		scn.write("Clicked on Your Account Text from Dropdown");
+		takeScreenShotAndAttachInReport(scn);
+	}
+	
 	public void email_or_phone(String text) {
 		setElement(email_or_phone_textbox, text);
 		logger.info("Entered Email or phone ");
@@ -109,6 +116,10 @@ public class CmnPageObjects extends Interact {
 		Assert.assertEquals(true, b);
 		scn.write("Page title matched: " + expectedTitle );
 	}	
+	public void validate_Your_Account_Text(String text) {
+		DisplayedorNot(your_acocunt_text);
+		logger.info("Validated You Account Page Succeccfully");
+	}
 	
 	public void validateElementPresentInHeaderSection(String text) {
 		

@@ -62,12 +62,13 @@ public static ArrayList<String> productList(){
 }
 
 @When("I Search products as Laptop and Added Into Cart")
-public void i_Search_products_as_Laptop_and_Added_Into_Cart() {
+public void i_Search_products_as_Laptop_and_Added_Into_Cart() throws InterruptedException {
    testContextUI.getSearchPageObject().search_TextBox("Laptop");
    testContextUI.getSearchPageObject().click_on_Search_Button();
    testContextUI.getSearchPageObject().ClickOnProductLink();
    testContextUI.getSearchPageObject().switchToSecondWindowTab();
    testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
+   Thread.sleep(3000);
    testContextUI.getDriver().close();
    testContextUI.getaddToCartPageObjects().switchToDefaultWindowTab();
    testContextUI.getSearchPageObject().CleartextBox();
@@ -80,12 +81,13 @@ public void i_get_message_as(String msg) {
 }
 
 @When("I Search products as Earphones and Added Into Cart")
-public void i_Search_products_as_Earphones_and_Added_Into_Cart() {
+public void i_Search_products_as_Earphones_and_Added_Into_Cart() throws InterruptedException {
 	testContextUI.getSearchPageObject().search_TextBox("Earphones");
 	   testContextUI.getSearchPageObject().click_on_Search_Button();
 	   testContextUI.getSearchPageObject().ClickOnProductLink();
 	   testContextUI.getSearchPageObject().switchToSecondWindowTab();
 	   testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
+	   Thread.sleep(3000);
 	   testContextUI.getDriver().close();
 	   testContextUI.getaddToCartPageObjects().switchToDefaultWindowTab();
 	   testContextUI.getSearchPageObject().CleartextBox();
