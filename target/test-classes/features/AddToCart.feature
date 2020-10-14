@@ -37,3 +37,20 @@ Feature: Add to Cart Functionality
   |Laptop|
   |Earphones|
   
+  @TC0016
+  Scenario: Add to cart Mutiple product of Different Catogories
+  Given I have browser opened and url navigated
+  When I search for and add single product of each category as below
+      | Laptop   |
+      | EarPhones |
+      | LED TV   |
+      | EarPhones |
+      | LED TV   |
+      | EarPhones   |
+      | LED TV  |
+      | Computer |
+      | LED TV   |
+      | Headphone   |   
+    Then All the products should be added in the cart
+  
+  

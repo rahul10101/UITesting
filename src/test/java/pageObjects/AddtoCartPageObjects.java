@@ -23,7 +23,8 @@ public class AddtoCartPageObjects extends Interact {
 	private By delete_1st_Product = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold']");
 	//private By added_Product_Name = By.xpath("//span[@class='a-size-medium sc-product-title a-text-bold']");
 	private By cart_empty_msg =By.xpath("//div[@class='a-row sc-your-amazon-cart-is-empty']");
-	
+	private By subTotal = By.xpath("//*[@id='sc-subtotal-label-buybox']");
+
 	public AddtoCartPageObjects(WebDriver driver, Scenario s) {
 		setDriver(driver);
 		this.scn = s; 
@@ -77,6 +78,13 @@ public class AddtoCartPageObjects extends Interact {
 		}else {
 			Assert.fail("Count Of The Cart not Displayed As 3");
 		}
+	}
+	
+	public void ValidateNumbersOfProducts() {
+		String expected ="Subtotal (12 items):";
+		String actual = getText(subTotal);
+		Assert.assertEquals(expected, actual);
+		scn.write("Subtotal Displayed as:" +"(10 item)");
 	}
 	
 

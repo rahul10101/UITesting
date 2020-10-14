@@ -1,6 +1,9 @@
 package stepdefs;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver.Navigation;
 
 import context.TestBase;
 import context.TestContextUI;
@@ -94,5 +97,34 @@ public void i_Search_products_as_Earphones_and_Added_Into_Cart() throws Interrup
 	   testContextUI.getDriver().navigate().refresh();
 }
 
+@When("I search for and add single product of each category as below")
+public void i_search_for_and_add_single_product_of_each_category_as_below(List<String> list) throws Exception {
+  
+	for(int i = 0;i<list.size(); i++) {
+		testContextUI.getSearchPageObject().search_TextBox(list.get(i));
+		 testContextUI.getSearchPageObject().click_on_Search_Button();
+		 i_click_on_first_product_in_the_Search_Result();
+		 i_click_on_Add_To_Cart_button();
+		 testContextUI.getDriver().close();
+		 testContextUI.getDriver().switchTo().window((String)testContextUI.getDriver().getWindowHandles().toArray()[0]).navigate().refresh();
+		 testContextUI.getSearchPageObject().CleartextBox();		 
+	}
+	
+}
 
+@Then("All the products should be added in the cart")
+public void all_the_products_should_be_added_in_the_cart() {
+  testContextUI.getaddToCartPageObjects().ClickOnCart();
+  testContextUI.getaddToCartPageObjects().ValidateNumbersOfProducts();
+}
+
+public void i_click_on_first_product_in_the_Search_Result() {
+	testContextUI.getSearchPageObject().ClickOnProductLink();
+}
+
+public void i_click_on_Add_To_Cart_button() throws Exception {
+	testContextUI.getDriver().switchTo().window((String) testContextUI.getDriver().getWindowHandles().toArray()[1]);
+	testContextUI.getaddToCartPageObjects().ClickOnAddtoCartButton();
+	Thread.sleep(15000);
+}
 }
